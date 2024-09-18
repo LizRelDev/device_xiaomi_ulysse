@@ -22,11 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/ulysse/device.mk)
 
 # Inherit some common Ancient stuff.
-$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+$(call inherit-product, vendor/qassa/config/common_full_phone.mk)
+
+# Inherit QASSA stuff
+QASSA_MAINTAINER := LizRelDev
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_GAPPS_ARCH := arm64
+TARGET_FAVE_UNLOCK_SUPPORTED := true
+USE_PIXEL_CHARGING := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ulysse
-PRODUCT_NAME := ancient_ulysse
+PRODUCT_NAME := qassa_ulysse
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 5A
@@ -39,10 +46,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="ugg-user 7.1.2 N2G47H V9.5.8.0.NDKMIFA release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "xiaomi/ugg/ugg:7.1.2/N2G47H/V9.5.8.0.NDKMIFA:user/release-keys"
-
-TARGET_BOOT_ANIMATION_RES := 720
-ANCIENT_NOGAPPS=true
-TARGET_GAPPS_ARCH := arm64
-ANCIENT_OFFICIAL := true
-FORCE_OTA := true
+BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"

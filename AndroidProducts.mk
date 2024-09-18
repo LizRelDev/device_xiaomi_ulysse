@@ -14,5 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/ancient_ulysse.mk
+    $(LOCAL_DIR)/qassa_ulysse.mk
 
+COMMON_LUNCH_CHOICES := \
+    qassa_ulysse-user \
+    qassa_ulysse-userdebug \
+    qassa_ulysse-eng
